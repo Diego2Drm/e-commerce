@@ -1,4 +1,5 @@
 import { Product } from "@/app/interfaces"
+import { ProductGridItem } from "./ProductGridItem";
 
 
 interface Props {
@@ -10,7 +11,7 @@ export const ProductGrid = ({ products }: Props) => {
     <section className="grid grid-cols-1 sm:grid-cols-2 gap-10 pb-10">
       {
         products.map(product => (
-          <span key={product.slug}>{product.title}</span>
+          <ProductGridItem key={product.slug} product={product} />
         ))
       }
     </section>
