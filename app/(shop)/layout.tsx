@@ -1,3 +1,4 @@
+import { NavBar } from "@/app/components";
 
 export default function RootLayout({
   children,
@@ -6,7 +7,8 @@ export default function RootLayout({
 }>) {
   return (
     <main className="min-h-screen bg-blue-950 text-white">
-     {children}
+      <NavBar />
+      {children}
     </main>
   );
 }
