@@ -1,11 +1,8 @@
-import Link from "next/link";
+import PageNotFound from "@/app/components/ui/not-found/PageNotFound";
 
 export default function () {
 
   return (
-    <div>
-      <h1>404 not-found</h1>
-      <Link href='/'>Regresar</Link>
-    </div>
+    <PageNotFound />
   )
 }
