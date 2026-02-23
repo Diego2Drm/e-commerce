@@ -1,11 +1,13 @@
-import { titleFont } from "../ui/fonts";
-
+import { Title } from "@/app/components";
 
 
 export default function Home() {
   return (
-    <div>
-      <h1 className={`${titleFont.className} font-bold`}>E-COMMERCE NEXT-JS</h1>
-    </div>
+    <>
+      <Title
+        title="Tienda"
+        subtitle="Todos los productos"
+      />
+    </>
   );
 }
