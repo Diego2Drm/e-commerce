@@ -34,7 +34,7 @@ export function NavBar() {
         </Link>
 
         <Link
-          href='/category/kids'
+          href='/category/kid'
           className="m-2 p-2 rounded-md transition-all hover:bg-gray-400">
           Niños
         </Link>
