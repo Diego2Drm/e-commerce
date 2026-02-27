@@ -1,9 +1,13 @@
+'use client';
 import Link from "next/link";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5"
 import { titleFont } from "@/app/ui/fonts";
+import { useUIStore } from "@/app/store";
 
 
 export function NavBar() {
+  const { openSIdeMenu } = useUIStore()
+
   return (
     <nav className="flex px-5 justify-between items-baseline w-full">
       {/* Logo */}
@@ -50,7 +54,9 @@ export function NavBar() {
           </div>
         </Link>
 
-        <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-400">
+        <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-400"
+          onClick={openSIdeMenu}
+        >
           Menú
         </button>
 
