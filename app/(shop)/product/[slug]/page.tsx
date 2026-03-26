@@ -1,3 +1,4 @@
+import { SizeSelector } from "@/app/components";
 import { initialData } from "@/app/seed/seed";
 import { titleFont } from "@/app/ui/fonts";
 import { notFound } from "next/navigation";
@@ -31,13 +32,15 @@ export default async function ({ params }: Props) {
         <p className="text-lg mb-5">
           ${product.price}
         </p>
+
         {/* Selector de Tallas */}
+        <SizeSelector selectorSize={product.sizes[1]} availableSizes={product.sizes} />
 
         {/* Selector de Cantidad */}
 
 
         {/* Button */}
-        <button className="btn-primary mb-5">
+        <button className="btn-primary my-5">
           Agregar al Carrito
         </button>
 
