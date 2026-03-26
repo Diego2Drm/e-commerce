@@ -1,4 +1,5 @@
 import { SizeSelector } from "@/app/components";
+import { QuantitySelector } from "@/app/components";
 import { initialData } from "@/app/seed/seed";
 import { titleFont } from "@/app/ui/fonts";
 import { notFound } from "next/navigation";
@@ -37,7 +38,7 @@ export default async function ({ params }: Props) {
         <SizeSelector selectorSize={product.sizes[1]} availableSizes={product.sizes} />
 
         {/* Selector de Cantidad */}
-
+        <QuantitySelector quantity={2}/>
 
         {/* Button */}
         <button className="btn-primary my-5">
