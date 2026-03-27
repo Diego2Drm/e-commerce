@@ -23,32 +23,59 @@ export const ProductSlideShow = ({ images, title, className }: Props) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperObject>();
 
   return (
-    <Swiper
-      style={{
-        '--swiper-navigation-color': '#000',
-        '--swiper-pagination-color': '#000',
-      } as React.CSSProperties}
+    <section>
+      <Swiper
+        style={{
+          '--swiper-navigation-color': '#000',
+          '--swiper-pagination-color': '#000',
+        } as React.CSSProperties}
 
-      spaceBetween={10}
-      navigation={true}
-      thumbs={{ swiper: thumbsSwiper }}
-      modules={[FreeMode, Navigation, Thumbs]}
-      className="mySwiper2"
-    >
-      {
-        images.map(img => (
-          <SwiperSlide key={img}>
-            <Image
-              src={`/products/${img}`}
-              alt={title}
-              width={500}
-              height={500}
-              className='rounded-lg object-fill'
-            />
-          </SwiperSlide>
-        ))
-      }
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
+      >
+        {
+          images.map(img => (
+            <SwiperSlide key={img}>
+              <Image
+                src={`/products/${img}`}
+                alt={title}
+                width={500}
+                height={500}
+                className='rounded-lg object-fill'
+              />
+            </SwiperSlide>
+          ))
+        }
 
-    </Swiper>
+      </Swiper>
+
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        {
+          images.map(img => (
+            <SwiperSlide key={img}>
+              <Image
+                src={`/products/${img}`}
+                alt={title}
+                width={300}
+                height={300}
+                className='rounded-lg object-fill'
+              />
+            </SwiperSlide>
+          ))
+        }
+
+      </Swiper>
+    </section>
   );
 };
