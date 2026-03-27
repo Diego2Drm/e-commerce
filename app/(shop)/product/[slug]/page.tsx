@@ -1,4 +1,4 @@
-import { SizeSelector } from "@/app/components";
+import { ProductSlideShow, SizeSelector } from "@/app/components";
 import { QuantitySelector } from "@/app/components";
 import { initialData } from "@/app/seed/seed";
 import { titleFont } from "@/app/ui/fonts";
@@ -21,7 +21,7 @@ export default async function ({ params }: Props) {
     <section className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* Slides Show */}
       <div className="col-span-1 md:col-span-2">
-        {slug}
+        <ProductSlideShow title={product.title} images={product.images}/>
       </div>
 
       {/* Detalles */}
@@ -38,7 +38,7 @@ export default async function ({ params }: Props) {
         <SizeSelector selectorSize={product.sizes[1]} availableSizes={product.sizes} />
 
         {/* Selector de Cantidad */}
-        <QuantitySelector quantity={2}/>
+        <QuantitySelector quantity={2} />
 
         {/* Button */}
         <button className="btn-primary my-5">
